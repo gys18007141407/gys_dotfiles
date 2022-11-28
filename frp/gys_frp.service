@@ -1,0 +1,14 @@
+[Unit]
+Description=gys's frp client
+After=network.target
+
+[Service]
+Type=forking
+User=UESTC-1
+ExecStart="/home/UESTC-1/gys_frp/frp_0.44.0_linux_amd64/frpc" -c "/home/UESTC-1/gys_frp/frp_0.44.0_linux_amd64/frpc.ini"
+Restart=always
+RestartSec=5
+
+[Install]
+Alias=gys_frp
+WantedBy=multi-user.target
