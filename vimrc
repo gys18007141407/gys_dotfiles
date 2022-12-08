@@ -366,8 +366,12 @@ au BufRead,BufNewFile *  setfiletype txt
 :inoremap ( ()<ESC>i
  
 :inoremap ) <c-r>=ClosePair(')')<CR>
- 
-:inoremap { {<CR>}<ESC>O
+
+" 花括号不换行 -> 补全括号
+" :inoremap { {}<ESC>i
+
+" 花括号换行 -> 换行缩进对齐
+:inoremap {<CR> {<CR>}<ESC>O
  
 :inoremap } <c-r>=ClosePair('}')<CR>
  
